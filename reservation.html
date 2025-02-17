@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reservation - WeTheBest</title>
+  <!-- Link to the same CSS file used by other pages -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Optional Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" 
+    rel="stylesheet"
+  >
+</head>
+<body>
+   <!-- Navigation -->
+   <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html">WeTheBest</a>
+      </div>
+      <nav>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <!-- “Reservation” styled as a button -->
+            <a href="reservation.html" class="reservation-btn">Reservation</a>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Reservation Section -->
+  <section class="reservation-section">
+    <h1>Appointment Booking</h1>
+    <div class="reservation-content">
+      <!-- Booking Form -->
+      <div class="booking-form">
+        <form action="appointment-info.html" method="post">
+          <label for="select-date">Select Date</label>
+          <input type="date" id="select-date" name="select-date" />
+
+          <label for="select-time">Time</label>
+          <input type="time" id="select-time" name="select-time" />
+
+          <label for="choose-service">Choose Service</label>
+          <select id="choose-service" name="choose-service">
+            <option value="haircut">Haircut</option>
+            <option value="shave">Shave</option>
+            <option value="trim">Beard Trim</option>
+            <option value="style">Styling</option>
+          </select>
+
+          <label for="preferred-barber">Preferred Barber</label>
+          <input type="text" id="preferred-barber" name="preferred-barber" placeholder="Optional" />
+
+          <label for="user-info">User Information</label>
+          <textarea 
+            id="user-info" 
+            name="user-info" 
+            rows="3" 
+            placeholder="Your name, phone number, any special requests..."
+          ></textarea>
+
+          <button type="submit" class="book-appointment-btn">Book Appointment</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (optional) -->
+  <footer class="footer">
+    <p>&copy; 2025 WeTheBest. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for mobile nav toggle -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

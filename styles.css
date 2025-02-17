@@ -1,0 +1,962 @@
+/* Global resets and fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar-brand a {
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #ff3b3b;
+  }
+  
+  .reservation-btn {
+    background-color: #ff3b3b;
+    color: #fff !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  }
+  
+  /* Hamburger menu (mobile) */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    background-color: #f8f8f8; /* fallback background */
+    padding-top: 80px; /* offset for fixed navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* If you want a background image, uncomment and set your own image:
+  .hero {
+    background: url('your-image.jpg') no-repeat center center/cover;
+  }
+  */
+  
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+  }
+  
+  .video-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .video-thumbnail {
+    width: 400px;
+    height: 225px;
+    background: #c4c4c4 url('https://via.placeholder.com/400x225') center/cover no-repeat;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .play-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    margin-top: 2rem;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background: #fff;
+      flex-direction: column;
+      gap: 1rem;
+      width: 200px;
+      padding: 1rem;
+      border-left: 1px solid #eee;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .nav-links.active {
+      transform: translateX(0%);
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  /************************************************
+  SERVICES HERO
+************************************************/
+.services-hero {
+    padding-top: 80px; /* offset for the fixed navbar */
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .services-hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  
+  .services-hero-content p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /************************************************
+    SERVICES OVERVIEW
+  ************************************************/
+  .services-overview {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .services-overview h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #000;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .service-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s;
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .service-card h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .service-card p {
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  .service-card:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  /************************************************
+    PRICING SECTION
+  ************************************************/
+  .pricing-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .pricing-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #000;
+  }
+  
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .pricing-table thead {
+    background-color: #f0f0f0;
+  }
+  
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #eee;
+  }
+  
+  .book-now-btn {
+    display: inline-block;
+    background-color: #ff3b3b;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+  }
+  
+  .book-now-btn:hover {
+    background-color: #e03232;
+  }
+  
+  /************************************************
+    TESTIMONIAL SECTION
+  ************************************************/
+  .testimonial-section {
+    background-color: #f8f8f8;
+    padding: 4rem 2rem;
+  }
+  
+  .testimonial-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .testimonial-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .testimonial-content {
+    max-width: 500px;
+  }
+  
+  .testimonial-quote {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  .testimonial-stars span {
+    color: #ffcc00; /* star color */
+    font-size: 1.2rem;
+    margin-right: 2px;
+  }
+  
+  .testimonial-name {
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  
+  .testimonial-position {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  /************************************************
+    ACTIVE NAV LINK
+  ************************************************/
+  .nav-links li a.active {
+    color: #ff3b3b;
+    font-weight: 600;
+  }
+  
+  /************************************************
+    FOOTER
+  ************************************************/
+  .footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    margin-top: 2rem;
+  }
+  
+/************************************************
+  ABOUT HERO
+************************************************/
+.about-hero {
+    padding-top: 80px; /* offset for fixed navbar */
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .about-hero-content {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+  
+  .about-hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  
+  .about-hero-content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .about-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /************************************************
+    MISSION & VALUES
+  ************************************************/
+  .mission-values {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .mission-values h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  
+  .mission-values p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .values-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .value-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    width: 200px;
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: box-shadow 0.3s;
+  }
+  
+  .value-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .value-card:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  /************************************************
+    ABOUT TESTIMONIALS
+  ************************************************/
+  .about-testimonials {
+    background-color: #f8f8f8;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .about-testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #000;
+  }
+  
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .testimonial-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 2rem;
+    transition: box-shadow 0.3s;
+  }
+  
+  .testimonial-card:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .testimonial-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .testimonial-user img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-user h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .testimonial-user p {
+    font-size: 0.95rem;
+    color: #555;
+    text-align: center;
+    line-height: 1.4;
+  }
+  
+  /************************************************
+    ACTIVE NAV LINK
+  ************************************************/
+  .nav-links li a.active {
+    color: #ff3b3b;
+    font-weight: 600;
+  }
+
+
+  /************************************************
+  RESERVATION SECTION
+************************************************/
+.reservation-section {
+    padding-top: 80px; /* offset for fixed navbar */
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .reservation-section h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #000;
+  }
+  
+  .reservation-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  /* Calendar Container */
+  .calendar-container {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 350px;
+    max-width: 500px;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .calendar-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .calendar-nav button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+  }
+  
+  /* Calendar Table */
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .calendar-table thead {
+    background-color: #f0f0f0;
+  }
+  
+  .calendar-table th,
+  .calendar-table td {
+    padding: 0.75rem;
+    border: 1px solid #eee;
+    width: 14.28%; /* 7 columns */
+  }
+  
+  .prev-month-day,
+  .next-month-day {
+    color: #ccc; /* Lighter color for days outside the current month */
+  }
+  
+  /* Booking Form */
+  .booking-form {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+  }
+  
+  .booking-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .booking-form label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  
+  .booking-form input,
+  .booking-form select,
+  .booking-form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .booking-form textarea {
+    resize: vertical;
+  }
+  
+  .book-appointment-btn {
+    background-color: #ff3b3b;
+    color: #fff;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .book-appointment-btn:hover {
+    background-color: #e03232;
+  }
+  
+  /************************************************
+    ACTIVE NAV LINK
+  ************************************************/
+  .nav-links li a.reservation-btn.active {
+    color: #ff3b3b;
+    font-weight: 600;
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+    .reservation-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /************************************************
+  INFORMATION SECTION
+************************************************/
+.info-section {
+    padding-top: 80px; /* offset for fixed navbar */
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .info-section h1 {
+    text-align: left;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #000;
+  }
+  
+  /* Container for the form */
+  .info-form-container {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 2rem;
+  }
+  
+  /* Form Group */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .required {
+    color: #ff3b3b; /* highlight required fields */
+    margin-left: 0.25rem;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="tel"],
+  .form-group input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  
+  /* Phone Field with Country Code */
+  .phone-field {
+    display: flex;
+    align-items: center;
+  }
+  
+  .country-code {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 0 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .flag-icon {
+    display: inline-block;
+    margin-right: 0.25rem;
+    width: 16px;
+    height: auto;
+  }
+  
+  /* Small hint text under the email field */
+  .input-hint {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 0.25rem;
+  }
+  
+  /* Confirm Appointment Button */
+  .confirm-appointment-btn {
+    background-color: #000; /* black button to match screenshot */
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .confirm-appointment-btn:hover {
+    background-color: #333;
+  }
+  
+
+  /************************************************
+  CONTACT SECTION
+************************************************/
+.contact-section {
+    padding-top: 80px; /* offset for fixed navbar */
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  /* Left Column: Contact Form */
+  .contact-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+  }
+  
+  .contact-heading {
+    color: #00b74a; /* green accent (adjust as needed) */
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-subheading {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #000;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .contact-submit-btn {
+    background-color: #00b74a; /* green accent */
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+  }
+  
+  .contact-submit-btn:hover {
+    background-color: #009f3e;
+  }
+  
+  /* Right Column: Map and Contact Info */
+  .contact-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+  }
+  
+  .map-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .contact-details h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-details p {
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  .hours-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hours-list li span {
+    color: #555;
+  }
+  
+  /************************************************
+    ACTIVE NAV LINK (Contact)
+  ************************************************/
+  .nav-links li a.active {
+    color: #ff3b3b; /* or your preferred accent color */
+    font-weight: 600;
+  }
+  
+  /************************************************
+    RESPONSIVE
+  ************************************************/
+  @media screen and (max-width: 768px) {
+    .contact-content {
+      flex-direction: column;
+    }
+  }
+  
+
+
+  
+  /************************************************
+  COMMON FOOTER
+************************************************/
+.common-footer {
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .footer-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  
+  .footer-content p {
+    margin-bottom: 0.5rem;
+    color: #555;
+    line-height: 1.4;
+  }
+  
+  .footer-map {
+    margin: 1.5rem 0;
+  }
+  
+  .footer-map img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .business-hours {
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  

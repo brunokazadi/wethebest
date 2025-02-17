@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WeTheBest</title>
+  <!-- Link to an external CSS file or include styles inline -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Optional Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" 
+    rel="stylesheet"
+  >
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html">WeTheBest</a>
+      </div>
+      <nav>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <!-- “Reservation” styled as a button -->
+            <a href="reservation.html" class="reservation-btn">Reservation</a>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Experience the Art of Grooming</h1>
+      <p>Your Style, Our Passion</p>
+      <div class="video-container">
+        <!-- Embedded YouTube Video -->
+        <iframe width="560" height="315" 
+          src="https://www.youtube.com/embed/iTWA6mVSCkk?si=tLBFInIpfQknKXFT" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional Additional Sections -->
+  <!-- Example: Services, About, or anything else you want to add -->
+
+  <!-- Footer (optional) -->
+  <footer class="footer">
+    <p>&copy; 2025 WeTheBest. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for mobile nav toggle -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
