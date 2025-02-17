@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - WeTheBest</title>
-  <!-- Link to your main CSS file (styles.css) -->
   <link rel="stylesheet" href="styles.css">
-  <!-- Optional Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link 
@@ -15,7 +13,6 @@
   >
 </head>
 <body>
-   <!-- Navigation -->
    <header class="navbar">
     <div class="navbar-container">
       <div class="navbar-brand">
@@ -27,7 +24,6 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li>
-            <!-- “Reservation” styled as a button -->
             <a href="reservation.html" class="reservation-btn">Reservation</a>
           </li>
           <li><a href="contact.html">Contact</a></li>
@@ -41,76 +37,42 @@
     </div>
   </header>
 
-  <!-- Contact Section -->
   <section class="contact-section">
     <div class="contact-content">
-      <!-- Contact Form -->
       <div class="contact-form">
         <h2 class="contact-heading">GET IN TOUCH</h2>
         <p class="contact-subheading">We're here to serve you!</p>
-        <form>
-          <!-- Name -->
+        <form id="contact-form">
           <div class="form-group">
             <label for="name">Name</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              placeholder="Jane Smith" 
-              required
-            />
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
           </div>
 
-          <!-- Email -->
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              placeholder="email@website.com" 
-              required
-            />
+            <input type="email" id="email" name="email" placeholder="email@website.com" required />
           </div>
 
-          <!-- Phone -->
           <div class="form-group">
             <label for="phone">Phone number</label>
-            <input 
-              type="tel" 
-              id="phone" 
-              name="phone" 
-              placeholder="555-555-5555" 
-              required
-            />
+            <input type="tel" id="phone" name="phone" placeholder="555-555-5555" required />
           </div>
 
-          <!-- Checkbox -->
           <div class="form-group checkbox-group">
-            <input 
-              type="checkbox" 
-              id="consent" 
-              name="consent" 
-              value="agree" 
-              required
-            />
+            <input type="checkbox" id="consent" name="consent" value="agree" required />
             <label for="consent">
-              I allow this website to store my submission so they can respond 
-              to my inquiry.
+              I allow this website to store my submission so they can respond to my inquiry.
             </label>
           </div>
 
-          <!-- Submit Button -->
           <button type="submit" class="contact-submit-btn">SUBMIT</button>
+
+          <p id="submission-message" class="hidden">Successfully Submitted!</p>
         </form>
       </div>
 
-      <!-- Map and Contact Info -->
       <div class="contact-info">
-        <!-- Map (Google Maps embed or placeholder image) -->
         <div class="map-container">
-          <!-- Replace src with your actual Google Maps embed link or 
-               use a placeholder image if needed -->
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.5894833388593!2d-75.69719368414483!3d45.42152997910178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05f4a2a72ed7%3A0x1f06b4779b7f59a2!2sOttawa%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sus!4v1678322812345!5m2!1sen!2sus"
             width="100%"
@@ -122,7 +84,6 @@
           ></iframe>
         </div>
 
-        <!-- Contact Details -->
         <div class="contact-details">
           <h3>Get in touch</h3>
           <p>wethebest@gmail.com</p>
@@ -143,13 +104,28 @@
     </div>
   </section>
 
-  <!-- Footer (optional) -->
   <footer class="footer">
     <p>&copy; 2025 WeTheBest. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for mobile nav toggle -->
   <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevents the default form submission
+
+      // Display an alert notification
+      alert("Successfully Submitted!");
+
+      // Optionally, show a success message on the page
+      const message = document.getElementById("submission-message");
+      message.classList.remove("hidden");
+      message.style.color = "green";
+      message.style.fontWeight = "bold";
+
+      // Clear the form fields after submission
+      this.reset();
+    });
+
+    // Mobile navigation toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
 
@@ -158,5 +134,12 @@
       hamburger.classList.toggle('active');
     });
   </script>
+
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+
 </body>
 </html>
