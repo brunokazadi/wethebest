@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Appointment Information - WeTheBest</title>
-  <!-- Link to the same CSS file used by other pages -->
   <link rel="stylesheet" href="styles.css">
-  <!-- Optional Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link 
@@ -15,7 +13,6 @@
   >
 </head>
 <body>
-   <!-- Navigation -->
    <header class="navbar">
     <div class="navbar-container">
       <div class="navbar-brand">
@@ -27,7 +24,6 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li>
-            <!-- “Reservation” styled as a button -->
             <a href="reservation.html" class="reservation-btn">Reservation</a>
           </li>
           <li><a href="contact.html">Contact</a></li>
@@ -41,88 +37,69 @@
     </div>
   </header>
 
-  <!-- Information Section -->
   <section class="info-section">
     <h1>Your Information</h1>
     <div class="info-form-container">
-      <form>
-        <!-- First Name -->
+      <form id="appointment-form">
         <div class="form-group">
           <label for="first-name">First Name<span class="required">*</span></label>
-          <input 
-            type="text" 
-            id="first-name" 
-            name="first-name" 
-            placeholder="First name ..." 
-            required
-          />
+          <input type="text" id="first-name" name="first-name" placeholder="First name ..." required />
         </div>
 
-        <!-- Last Name -->
         <div class="form-group">
           <label for="last-name">Last Name<span class="required">*</span></label>
-          <input 
-            type="text" 
-            id="last-name" 
-            name="last-name" 
-            placeholder="Last name ..." 
-            required
-          />
+          <input type="text" id="last-name" name="last-name" placeholder="Last name ..." required />
         </div>
 
-        <!-- Phone -->
         <div class="form-group">
           <label for="phone">Phone<span class="required">*</span></label>
           <div class="phone-field">
-            <!-- Country Code (Canada as an example) -->
             <span class="country-code">
-              <img 
-                src="https://flagcdn.com/16x12/ca.png" 
-                alt="Canada Flag" 
-                class="flag-icon"
-              />
-              +1
+              <img src="https://flagcdn.com/16x12/ca.png" alt="Canada Flag" class="flag-icon"/> +1
             </span>
-            <input 
-              type="tel" 
-              id="phone" 
-              name="phone" 
-              placeholder="Phone number ..." 
-              required
-            />
+            <input type="tel" id="phone" name="phone" placeholder="Phone number ..." required />
           </div>
         </div>
 
-        <!-- Email -->
         <div class="form-group">
           <label for="email">Email<span class="required">*</span></label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            placeholder="Email ..." 
-            required
-          />
+          <input type="email" id="email" name="email" placeholder="Email ..." required />
           <small class="input-hint">
             Use a comma or press Enter/Return to add additional email addresses.
           </small>
         </div>
 
-        <!-- Confirm Button -->
         <button type="submit" class="confirm-appointment-btn">
           Confirm Appointment
         </button>
+
+        <p id="submission-message" class="hidden">Successfully Submitted!</p>
       </form>
     </div>
   </section>
 
-  <!-- Footer (optional) -->
   <footer class="footer">
     <p>&copy; 2025 WeTheBest. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for mobile nav toggle -->
   <script>
+    document.getElementById("appointment-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevents the default form submission
+
+      // Display an alert notification
+      alert("Successfully Submitted!");
+
+      // Optionally, show a success message on the page
+      const message = document.getElementById("submission-message");
+      message.classList.remove("hidden");
+      message.style.color = "green";
+      message.style.fontWeight = "bold";
+
+      // Clear the form fields after submission
+      this.reset();
+    });
+
+    // Mobile navigation toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
 
@@ -131,5 +108,13 @@
       hamburger.classList.toggle('active');
     });
   </script>
+
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+
 </body>
 </html>
+
